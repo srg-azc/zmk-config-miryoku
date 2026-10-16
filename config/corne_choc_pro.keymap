@@ -24,7 +24,7 @@
  * key is the physical Portuguese key: - (Shift _); the right pinky sends ' (Shift ?).
  * º (lower) and ª (upper) are on the left centre keys of the Num layer.
  *
- * CENTRE KEYS (Base and Extra): left pair = Home / End, right pair = Page Up / Page Down.
+ * CENTRE KEYS (Base and Extra): left pair = Home / End, right pair = Volume Up / Volume Down.
  *
  * OUTER COLUMNS (Base and Extra):  Tab / Ctrl / Shift  |  Backspace / Del / Shift.
  * Shift is one-shot (tap, then the next key is capital); tap it again while it
@@ -69,30 +69,30 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                &kp TAB   &acc_lt 11 Q &acc_lt 13 W &acc_lt 12 E  &acc_lt 10 R  &kp T       &kp HOME &kp PG_UP &kp Y       &acc_lt 10 U  &acc_lt 12 I  &acc_lt 13 O   &acc_lt 11 P     &kp BSPC
-                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END  &kp PG_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
-                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                          &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
-                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                    &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
+                &kp TAB   &acc_lt 11 Q &acc_lt 13 W &acc_lt 12 E  &acc_lt 10 R  &kp T       &kp HOME &kp C_VOL_UP &kp Y       &acc_lt 10 U  &acc_lt 12 I  &acc_lt 13 O   &acc_lt 11 P     &kp BSPC
+                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END  &kp C_VOL_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
+                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                             &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
+                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                       &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
             >;
         };
 
         extra_layer {
             display-name = "Extra";
             bindings = <
-                &kp TAB   &kp Q        &kp W        &kp E         &kp R         &kp T       &kp HOME &kp PG_UP &kp Y       &kp U         &kp I         &kp O          &kp P            &kp BSPC
-                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END  &kp PG_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
-                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                          &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
-                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                    &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
+                &kp TAB   &kp Q        &kp W        &kp E         &kp R         &kp T       &td_home_base &kp C_VOL_UP &kp Y       &kp U         &kp I         &kp O          &kp P            &kp BSPC
+                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END       &kp C_VOL_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
+                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                                  &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
+                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                            &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
             >;
         };
 
         tap_layer {
             display-name = "Tap";
             bindings = <
-                &kp TAB   &kp Q &kp W &kp E   &kp R     &kp T   &none &none &kp Y   &kp U    &kp I     &kp O   &kp P     &kp BSPC
-                &kp LCTRL &kp A &kp S &kp D   &kp F     &kp G   &none &none &kp H   &kp J    &kp K     &kp L   &kp MINUS &kp DEL
-                &kp LSHFT &kp Z &kp X &kp C   &kp V     &kp B               &kp N   &kp M    &kp COMMA &kp DOT &kp SLASH &kp RSHFT
-                                      &kp ESC &kp SPACE &kp TAB             &kp RET &kp BSPC &kp DEL
+                &kp TAB   &kp Q &kp W &kp E   &kp R     &kp T   &u_to_base &kp C_VOL_UP &kp Y   &kp U    &kp I     &kp O   &kp P     &kp BSPC
+                &kp LCTRL &kp A &kp S &kp D   &kp F     &kp G   &none      &kp C_VOL_DN &kp H   &kp J    &kp K     &kp L   &kp MINUS &kp DEL
+                &kp LSHFT &kp Z &kp X &kp C   &kp V     &kp B                           &kp N   &kp M    &kp COMMA &kp DOT &kp SLASH &kp RSHFT
+                                      &kp ESC &kp SPACE &kp TAB                         &kp RET &kp BSPC &kp DEL
             >;
         };
 
@@ -301,6 +301,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&none>, <&to 9>;
+        };
+        /* Extra layer, top-left centre: tap = Home, double-tap = back to Base */
+        td_home_base: td_home_base {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp HOME>, <&to 0>;
         };
 
         /* shift = alternate function */
