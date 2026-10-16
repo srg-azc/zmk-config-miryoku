@@ -139,20 +139,20 @@
         num_layer {
             display-name = "Num";
             bindings = <
-                &none &nm_lbkt  &nm_7 &nm_8   &nm_9 &nm_rbkt  &kp LS(SQT) &none &none &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &none &nm_semi  &nm_4 &nm_5   &nm_6 &nm_eq    &kp SQT     &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
-                &none &nm_grave &nm_1 &nm_2   &nm_3 &kp GRAVE                   &none &u_to_num  &u_to_nav   &kp RALT  &none       &none
-                                      &nm_dot &nm_0 &kp SLASH                   &none &none      &none
+                &kp RA(N2) &nm_lbkt  &kp N7 &kp N8  &kp N9 &nm_rbkt  &kp LS(SQT) &none &pt_caret &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &kp EQUAL  &kp NUBS  &nm_4  &kp N5  &kp N6 &kp LBKT  &kp SQT     &none &pt_grave &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &kp MINUS  &kp COMMA &kp N1 &kp N2  &kp N3 &kp GRAVE                   &pt_tilde &u_to_num  &u_to_nav   &kp RALT  &none       &none
+                                            &kp DOT &kp N0 &kp SLASH                   &none     &none      &none
             >;
         };
 
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &none &kp RA(N7)  &kp LS(N6) &kp LS(LBKT) &kp LS(N8) &kp RA(N0)    &none &none &none &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &none &kp LS(DOT) &kp RA(N5) &kp LS(N5)   &pt_caret  &kp LBKT      &none &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
-                &none &pt_tilde   &kp LS(N1) &kp RA(N2)   &kp LS(N3) &kp LS(GRAVE)             &none &u_to_sym  &u_to_mouse &kp RALT  &none       &none
-                                             &kp LS(N8)   &kp LS(N9) &kp LS(SLASH)             &none &none      &none
+                &kp RA(N2)    &kp RA(N7)    &kp LS(N7) &kp LS(N8)  &kp LS(N9) &kp RA(N0)    &kp LS(N4) &pt_trema &pt_caret &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &kp LS(EQUAL) &kp LS(NUBS)  &kp RA(N5) &kp LS(N5)  &kp LS(N6) &kp LS(LBKT)  &none      &pt_acute &pt_grave &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &kp LS(MINUS) &kp LS(COMMA) &kp LS(N1) &kp LS(N2)  &kp LS(N3) &kp LS(GRAVE)                      &pt_tilde &u_to_sym  &u_to_mouse &kp RALT  &none       &none
+                                                       &kp LS(DOT) &kp LS(N0) &kp LS(SLASH)                      &none     &none      &none
             >;
         };
 
@@ -169,40 +169,40 @@
         acute_layer {
             display-name = "Acute";
             bindings = <
-                &trans &trans &trans &ac_e  &trans &trans &trans &trans &trans &ac_u  &ac_i  &ac_o  &trans &trans
-                &trans &ac_a  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans               &trans &trans &trans
+                &trans &trans &trans &ac_e  &trans    &trans &trans &trans &trans &ac_u  &ac_i  &ac_o  &trans &trans
+                &trans &ac_a  &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans               &trans &trans &trans &trans &trans &trans
+                                     &trans &pt_acute &trans               &trans &trans &trans
             >;
         };
 
         grave_layer {
             display-name = "Grave";
             bindings = <
-                &trans &trans &trans &gr_e  &trans &trans &trans &trans &trans &gr_u  &gr_i  &gr_o  &trans &trans
-                &trans &gr_a  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans               &trans &trans &trans
+                &trans &trans &trans &gr_e  &trans    &trans &trans &trans &trans &gr_u  &gr_i  &gr_o  &trans &trans
+                &trans &gr_a  &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans               &trans &trans &trans &trans &trans &trans
+                                     &trans &pt_grave &trans               &trans &trans &trans
             >;
         };
 
         tilde_layer {
             display-name = "Tilde";
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &ti_o  &trans &trans
-                &trans &ti_a  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans               &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &ti_o  &trans &trans
+                &trans &ti_a  &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans               &trans &trans &trans &trans &trans &trans
+                                     &trans &pt_tilde &trans               &trans &trans &trans
             >;
         };
 
         circ_layer {
             display-name = "Circ";
             bindings = <
-                &trans &trans &trans &ci_e  &trans &trans &trans &trans &trans &ci_u  &ci_i  &ci_o  &trans &trans
-                &trans &ci_a  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-                                     &trans &trans &trans               &trans &trans &trans
+                &trans &trans &trans &ci_e  &trans    &trans &trans &trans &trans &ci_u  &ci_i  &ci_o  &trans &trans
+                &trans &ci_a  &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans               &trans &trans &trans &trans &trans &trans
+                                     &trans &pt_caret &trans               &trans &trans &trans
             >;
         };
     };
@@ -468,94 +468,16 @@
             bindings = <&kp RA(N8)>, <&kp RA(N7)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        nm_7: nm_7 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp LS(N6)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_8: nm_8 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N8>, <&kp LS(LBKT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_9: nm_9 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N9>, <&kp LS(N8)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
         nm_rbkt: nm_rbkt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RA(N9)>, <&kp RA(N0)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        nm_semi: nm_semi {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(COMMA)>, <&kp LS(DOT)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
         nm_4: nm_4 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N4>, <&kp RA(N5)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_5: nm_5 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N5>, <&kp LS(N5)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_6: nm_6 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N6>, <&pt_caret>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_eq: nm_eq {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N0)>, <&kp LBKT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_grave: nm_grave {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&pt_grave>, <&pt_tilde>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_1: nm_1 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N1>, <&kp LS(N1)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_2: nm_2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N2>, <&kp RA(N2)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_3: nm_3 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N3>, <&kp LS(N3)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_dot: nm_dot {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp LS(NUBS)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        nm_0: nm_0 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N0>, <&kp LS(N9)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -587,7 +509,21 @@
             bindings = <&bt BT_SEL 3 &bt BT_CLR>;
         };
 
-        /* stand-alone ` ^ ~ on the Portuguese layout: dead key, then Space */
+        /* stand-alone ´ ` ^ ~ on the Portuguese layout: dead key, then Space */
+        pt_acute: pt_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp RBKT &kp SPACE>;
+        };
+        pt_trema: pt_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp RA(LBKT) &kp SPACE>;
+        };
         pt_grave: pt_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
