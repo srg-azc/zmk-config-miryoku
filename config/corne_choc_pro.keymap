@@ -99,30 +99,30 @@
         button_layer {
             display-name = "Button";
             bindings = <
-                &none &kp K_UNDO &kp LS(DEL) &kp LC(INS) &kp LS(INS) &kp K_AGAIN &none &none &kp K_AGAIN &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp K_UNDO &none
-                &none &kp LGUI   &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none &none &none       &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI   &none
-                &none &kp K_UNDO &kp LS(DEL) &kp LC(INS) &kp LS(INS) &kp K_AGAIN             &kp K_AGAIN &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp K_UNDO &none
-                                             &mkp MB3    &mkp MB1    &mkp MB2                &mkp MB2    &mkp MB1    &mkp MB3
+                &none &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y) &none &none &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z) &none
+                &none &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none     &none &none &none     &kp LSHFT &kp LCTRL &kp LALT  &kp LGUI  &none
+                &none &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)             &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z) &none
+                                          &mkp MB3  &mkp MB1  &mkp MB2              &mkp MB2  &mkp MB1  &mkp MB3
             >;
         };
 
         nav_layer {
             display-name = "Nav";
             bindings = <
-                &none &bootloader &u_to_tap &u_to_extra &u_to_base &none &none &none &kp K_AGAIN  &kp LS(INS) &kp LC(INS) &kp LS(DEL) &kp K_UNDO &none
-                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT  &none &none &none &u_caps_word &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT  &none
-                &none &none       &kp RALT  &u_to_num   &u_to_nav  &none             &kp INS      &kp HOME    &kp PG_DN   &kp PG_UP   &kp END    &none
-                                            &none       &none      &none             &kp RET      &kp BSPC    &kp DEL
+                &none &bootloader &u_to_tap &u_to_extra &u_to_base &none &none &none &kp LC(Y)    &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z) &none
+                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT  &none &none &none &u_caps_word &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
+                &none &none       &kp RALT  &u_to_num   &u_to_nav  &none             &kp INS      &kp HOME  &kp PG_DN &kp PG_UP &kp END   &none
+                                            &none       &none      &none             &kp RET      &kp BSPC  &kp DEL
             >;
         };
 
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-                &none &bootloader &u_to_tap &u_to_extra &u_to_base  &none &none &none &kp K_AGAIN &kp LS(INS)    &kp LC(INS)    &kp LS(DEL)  &kp K_UNDO      &none
-                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT   &none &none &none &none       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-                &none &none       &kp RALT  &u_to_sym   &u_to_mouse &none             &none       &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
-                                            &none       &none       &none             &mkp MB2    &mkp MB1       &mkp MB3
+                &none &bootloader &u_to_tap &u_to_extra &u_to_base  &none &none &none &kp LC(Y) &kp LC(V)      &kp LC(C)      &kp LC(X)    &kp LC(Z)       &none
+                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT   &none &none &none &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+                &none &none       &kp RALT  &u_to_sym   &u_to_mouse &none             &none     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+                                            &none       &none       &none             &mkp MB2  &mkp MB1       &mkp MB3
             >;
         };
 
@@ -139,10 +139,10 @@
         num_layer {
             display-name = "Num";
             bindings = <
-                &none &kp RA(N8)    &kp N7 &kp N8  &kp N9 &kp RA(N9) &kp LS(SQT) &none &none &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &none &kp LS(COMMA) &kp N4 &kp N5  &kp N6 &kp LS(N0) &kp SQT     &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
-                &none &pt_grave     &kp N1 &kp N2  &kp N3 &kp GRAVE                    &none &u_to_num  &u_to_nav   &kp RALT  &none       &none
-                                           &kp DOT &kp N0 &kp SLASH                    &none &none      &none
+                &none &nm_lbkt  &nm_7 &nm_8   &nm_9 &nm_rbkt  &kp LS(SQT) &none &none &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &none &nm_semi  &nm_4 &nm_5   &nm_6 &nm_eq    &kp SQT     &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &none &nm_grave &nm_1 &nm_2   &nm_3 &kp GRAVE                   &none &u_to_num  &u_to_nav   &kp RALT  &none       &none
+                                      &nm_dot &nm_0 &kp SLASH                   &none &none      &none
             >;
         };
 
@@ -150,7 +150,7 @@
             display-name = "Sym";
             bindings = <
                 &none &kp RA(N7)  &kp LS(N6) &kp LS(LBKT) &kp LS(N8) &kp RA(N0)    &none &none &none &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &none &kp LS(DOT) &kp LS(N4) &kp LS(N5)   &pt_caret  &kp LBKT      &none &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &none &kp LS(DOT) &kp RA(N5) &kp LS(N5)   &pt_caret  &kp LBKT      &none &none &none &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
                 &none &pt_tilde   &kp LS(N1) &kp RA(N2)   &kp LS(N3) &kp LS(GRAVE)             &none &u_to_sym  &u_to_mouse &kp RALT  &none       &none
                                              &kp LS(N8)   &kp LS(N9) &kp LS(SLASH)             &none &none      &none
             >;
@@ -451,6 +451,104 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ci_u_l>, <&ci_u_u>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* Num layer keys: Shift gives Miryoku's shifted symbol (US legends) */
+        nm_lbkt: nm_lbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N8)>, <&kp RA(N7)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_7: nm_7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N7>, <&kp LS(N6)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_8: nm_8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp LS(LBKT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_9: nm_9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&kp LS(N8)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_rbkt: nm_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N9)>, <&kp RA(N0)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_semi: nm_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(COMMA)>, <&kp LS(DOT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_4: nm_4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N4>, <&kp RA(N5)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_5: nm_5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp LS(N5)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_6: nm_6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&pt_caret>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_eq: nm_eq {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N0)>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_grave: nm_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&pt_grave>, <&pt_tilde>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_1: nm_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp LS(N1)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_2: nm_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp RA(N2)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_3: nm_3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp LS(N3)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_dot: nm_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp LS(NUBS)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_0: nm_0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp LS(N9)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
