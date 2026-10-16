@@ -24,9 +24,6 @@
  * key is the physical Portuguese key: - (Shift _); the right pinky sends ' (Shift ?).
  * º (lower) and ª (upper) are on the left centre keys of the Num layer.
  *
- * KEY REPEAT: Space, Enter, Backspace and Delete (thumbs) are &lt_rpt: tap, then
- * press and hold within 175 ms to repeat the key; a plain hold still opens the layer.
- *
  * CENTRE KEYS (Base and Extra): left pair = Home / End, right pair = Page Up / Page Down.
  *
  * OUTER COLUMNS (Base and Extra):  Tab / Ctrl / Shift  |  Backspace / Del / Shift.
@@ -72,20 +69,20 @@
         base_layer {
             display-name = "Base";
             bindings = <
-                &kp TAB   &acc_lt 11 Q &acc_lt 13 W &acc_lt 12 E  &acc_lt 10 R    &kp T       &kp HOME &kp PG_UP &kp Y         &acc_lt 10 U   &acc_lt 12 I  &acc_lt 13 O   &acc_lt 11 P     &kp BSPC
-                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F   &kp G       &kp END  &kp PG_DN &kp H         &u_mt LSHFT J  &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
-                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V           &kp B                          &kp N         &kp M          &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
-                                                    &u_lt 6 ESC   &lt_rpt 4 SPACE &u_lt 5 TAB                    &lt_rpt 8 RET &lt_rpt 7 BSPC &lt_rpt 9 DEL
+                &kp TAB   &acc_lt 11 Q &acc_lt 13 W &acc_lt 12 E  &acc_lt 10 R  &kp T       &kp HOME &kp PG_UP &kp Y       &acc_lt 10 U  &acc_lt 12 I  &acc_lt 13 O   &acc_lt 11 P     &kp BSPC
+                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END  &kp PG_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
+                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                          &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
+                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                    &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
             >;
         };
 
         extra_layer {
             display-name = "Extra";
             bindings = <
-                &kp TAB   &kp Q        &kp W        &kp E         &kp R           &kp T       &kp HOME &kp PG_UP &kp Y         &kp U          &kp I         &kp O          &kp P            &kp BSPC
-                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F   &kp G       &kp END  &kp PG_DN &kp H         &u_mt LSHFT J  &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
-                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V           &kp B                          &kp N         &kp M          &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
-                                                    &u_lt 6 ESC   &lt_rpt 4 SPACE &u_lt 5 TAB                    &lt_rpt 8 RET &lt_rpt 7 BSPC &lt_rpt 9 DEL
+                &kp TAB   &kp Q        &kp W        &kp E         &kp R         &kp T       &kp HOME &kp PG_UP &kp Y       &kp U         &kp I         &kp O          &kp P            &kp BSPC
+                &kp LCTRL &u_mt LGUI A &u_mt LALT S &u_mt LCTRL D &u_mt LSHFT F &kp G       &kp END  &kp PG_DN &kp H       &u_mt LSHFT J &u_mt LCTRL K &u_mt LALT L   &u_mt LGUI MINUS &kp DEL
+                &sk_cw    &u_lt 3 Z    &u_mt RALT X &kp C         &kp V         &kp B                          &kp N       &kp M         &kp COMMA     &u_mt RALT DOT &u_lt 3 SLASH    &sk_cw
+                                                    &u_lt 6 ESC   &u_lt 4 SPACE &u_lt 5 TAB                    &u_lt 8 RET &u_lt 7 BSPC  &u_lt 9 DEL
             >;
         };
 
@@ -229,17 +226,6 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-
-        /* layer-tap for Space, Enter, Backspace, Delete: tap then press and hold
-           (within quick-tap-ms) = the key repeats; a plain hold = the layer */
-        lt_rpt: lt_rpt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
