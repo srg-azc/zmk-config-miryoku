@@ -34,7 +34,7 @@
  * ACCENTS (Windows, Portuguese (Portugal) keyboard layout)
  * Hold a top-row key on the Base layer and tap a vowel to get an accented one:
  *     hold R or U  + vowel -> acute      (a e i o u)
- *     hold E or I  + vowel -> tilde      (a o)
+ *     hold E or I  + vowel -> tilde      (a o, and n for ñ)
  *     hold W or O  + vowel -> circumflex (a e i o u)
  *     hold Q or P  + vowel -> grave      (a e i o u)
  *     tap C + V together   -> Ç          (Shift gives Ç)
@@ -191,7 +191,7 @@
             bindings = <
                 &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &ti_o  &trans &trans
                 &trans &ti_a  &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans    &trans               &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans               &ti_n  &trans &trans &trans &trans &trans
                                      &trans &pt_tilde &trans               &trans &trans &trans
             >;
         };
@@ -428,6 +428,12 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ti_o_l>, <&ti_o_u>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ti_n: ti_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ti_n_l>, <&ti_n_u>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ci_a: ci_a {
@@ -714,6 +720,20 @@
             wait-ms = <10>;
             tap-ms = <20>;
             bindings = <&macro_tap &kp NUHS &kp LS(O)>;
+        };
+        ti_n_l: ti_n_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp NUHS &kp N>;
+        };
+        ti_n_u: ti_n_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp NUHS &kp LS(N)>;
         };
         ci_a_l: ci_a_l {
             compatible = "zmk,behavior-macro";
