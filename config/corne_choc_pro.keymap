@@ -26,11 +26,9 @@
  * NUM (hold Backspace): numpad block 7 8 9 / 4 5 6 / 1 2 3, with . , º on the pinky
  * column, / * + on the extra index column, 0 and - on the thumbs, > < on the right
  * hand.  Shift gives the small character of each key: 7 ^  8 ~  9 ´  / `  * ¨  4 %
- * 5 (  6 )  1 EUR  2 ²  3 ³  . :  , ;  0 =  - _  º ª.  Press two of 1 2 3 4
- * together for a fraction: 1+2 ½, 1+3 1/3, 2+3 2/3, 1+4 ¼, 3+4 ¾.
- * ² ³ ½ ¼ ¾ are Windows Alt codes (Alt + numeric keypad): Windows only, Num Lock on.
+ * 5 (  6 )  1 EUR  2 $  3 £  . :  , ;  0 =  - _  º ª.
  * SYM (hold Enter): rows  ! " # EUR backslash / @ % ( ) & / < { [ ] }, thumbs : = _ ,
- * » « on the right hand.  Shift: ! ?  " '  EUR $  backslash |  < >.
+ * § » « on the right hand (Y H N).  Shift: ! ?  " '  EUR $  backslash |  < >.
  * NAV / MOUSE: inverted-T cluster on the right hand (Home Up End PgUp / Left Down
  * Right PgDn, and Scroll L / Mouse Up / Scroll R / Scroll Up / Mouse L, D, R /
  * Scroll Down); the left-hand bottom pinky key is a one-shot Shift (also on Media).
@@ -160,7 +158,7 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &none &nm_s_excl &nm_s_quot &kp LS(N3)  &nm_s_eur  &kp GRAVE     &none &none &none         &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &none &nm_s_excl &nm_s_quot &kp LS(N3)  &nm_s_eur  &kp GRAVE     &none &none &kp RA(N4)    &u_to_base &u_to_extra &u_to_tap &bootloader &none
                 &none &kp RA(N2) &kp LS(N5) &kp LS(N8)  &kp LS(N9) &kp LS(N6)    &none &none &kp LS(EQUAL) &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
                 &none &kp NUBS   &kp RA(N7) &kp RA(N8)  &kp RA(N9) &kp RA(N0)                &kp EQUAL     &u_to_sym  &u_to_mouse &kp RALT  &none       &none
                                             &kp LS(DOT) &kp LS(N0) &kp LS(SLASH)             &none         &none      &none
@@ -536,13 +534,13 @@
         nm_2: nm_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N2>, <&alt_sup2>;
+            bindings = <&kp N2>, <&kp LS(N4)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         nm_3: nm_3 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N3>, <&alt_sup3>;
+            bindings = <&kp N3>, <&kp RA(N3)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         nm_s_excl: nm_s_excl {
@@ -627,58 +625,6 @@
             wait-ms = <10>;
             tap-ms = <20>;
             bindings = <&macro_tap &kp NUHS &kp SPACE>;
-        };
-
-        /* Windows Alt codes: hold Alt, type the decimal code on the numeric
-           keypad.  Windows only (Num Lock on); other systems ignore or misread them */
-        alt_sup2: alt_sup2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N8 &macro_release &kp LALT>;
-        };
-        alt_sup3: alt_sup3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N9 &macro_release &kp LALT>;
-        };
-        alt_half: alt_half {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N8 &kp KP_N9 &macro_release &kp LALT>;
-        };
-        alt_quarter: alt_quarter {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N8 &kp KP_N8 &macro_release &kp LALT>;
-        };
-        alt_3quarters: alt_3quarters {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N0 &macro_release &kp LALT>;
-        };
-        frac_13: frac_13 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <20>;
-            bindings = <&macro_tap &kp N1 &kp LS(N7) &kp N3>;
-        };
-        frac_23: frac_23 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <20>;
-            bindings = <&macro_tap &kp N2 &kp LS(N7) &kp N3>;
         };
 
         /* dead key, then the vowel (_l = lower case, _u = upper case) */
@@ -944,38 +890,6 @@
             key-positions = <31 32>;
             bindings = <&kp SEMI>;
             layers = <0>;
-        };
-
-        /* Num layer: two digits together = fraction (numerator + denominator) */
-        combo_half: combo_half {
-            timeout-ms = <35>;
-            key-positions = <30 31>;
-            bindings = <&alt_half>;
-            layers = <7>;
-        };
-        combo_third: combo_third {
-            timeout-ms = <35>;
-            key-positions = <30 32>;
-            bindings = <&frac_13>;
-            layers = <7>;
-        };
-        combo_two_thirds: combo_two_thirds {
-            timeout-ms = <35>;
-            key-positions = <31 32>;
-            bindings = <&frac_23>;
-            layers = <7>;
-        };
-        combo_quarter: combo_quarter {
-            timeout-ms = <35>;
-            key-positions = <30 16>;
-            bindings = <&alt_quarter>;
-            layers = <7>;
-        };
-        combo_3_quarters: combo_3_quarters {
-            timeout-ms = <35>;
-            key-positions = <32 16>;
-            bindings = <&alt_3quarters>;
-            layers = <7>;
         };
     };
 };
