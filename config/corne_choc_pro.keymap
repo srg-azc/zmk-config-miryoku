@@ -17,12 +17,23 @@
  * Miryoku uses the 36 core keys; the 4 centre keys are &none and free for your
  * own bindings.
  *
- * PORTUGUESE (PORTUGAL) LAYOUT: the Num and Sym layers keep Miryoku's default key
- * positions, but every character is sent as the key sequence that prints it on
- * the Windows Portuguese layout (AltGr for [ ] { } @, Shift for ; : = & ( ) ! #
- * $ % * _ |, dead key + Space for ` ^ ~).  On the alpha layers the bottom-right
- * key is the physical Portuguese key: - (Shift _); the right pinky sends ' (Shift ?).
- * º (lower) and ª (upper) are on the left centre keys of the Num layer.
+ * PORTUGUESE (PORTUGAL) LAYOUT: every character on the Num and Sym layers is sent
+ * as the key sequence that prints it on the Windows Portuguese layout (AltGr for
+ * [ ] { } @ EUR, Shift for ! " # $ % & ( ) = : ; _ ?, dead key + Space for ` ^ ~ ´ ¨).
+ * On the alpha layers the bottom-right key is the physical Portuguese key: -
+ * (Shift _); the right pinky sends ' (Shift ?).
+ *
+ * NUM (hold Backspace): numpad block 7 8 9 / 4 5 6 / 1 2 3, with . , º on the pinky
+ * column, / * + on the extra index column, 0 and - on the thumbs, > < on the right
+ * hand.  Shift gives the small character of each key: 7 ^  8 ~  9 ´  / `  * ¨  4 %
+ * 5 (  6 )  1 EUR  2 ²  3 ³  . :  , ;  0 =  - _  º ª.  Press two of 1 2 3 4
+ * together for a fraction: 1+2 ½, 1+3 1/3, 2+3 2/3, 1+4 ¼, 3+4 ¾.
+ * ² ³ ½ ¼ ¾ are Windows Alt codes (Alt + numeric keypad): Windows only, Num Lock on.
+ * SYM (hold Enter): rows  ! " # EUR backslash / @ % ( ) & / < { [ ] }, thumbs : = _ ,
+ * » « on the right hand.  Shift: ! ?  " '  EUR $  backslash |  < >.
+ * NAV / MOUSE: inverted-T cluster on the right hand (Home Up End PgUp / Left Down
+ * Right PgDn, and Scroll L / Mouse Up / Scroll R / Scroll Up / Mouse L, D, R /
+ * Scroll Down); the left-hand bottom pinky key is a one-shot Shift (also on Media).
  *
  * CENTRE KEYS (Base and Extra): left pair = Home / End, right pair = Volume Up / Volume Down.
  *
@@ -110,8 +121,8 @@
             display-name = "Nav";
             bindings = <
                 &none &bootloader &u_to_tap &u_to_extra &u_to_base &none &none &none &kp LC(Y)    &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z) &none
-                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT  &none &none &none &u_caps_word &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
-                &none &none       &kp RALT  &u_to_num   &u_to_nav  &none             &kp INS      &kp HOME  &kp PG_DN &kp PG_UP &kp END   &none
+                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT  &none &none &none &u_caps_word &kp HOME  &kp UP    &kp END   &kp PG_UP &none
+                &none &sk LSHFT   &kp RALT  &u_to_num   &u_to_nav  &none             &kp INS      &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN &none
                                             &none       &none      &none             &kp RET      &kp BSPC  &kp DEL
             >;
         };
@@ -119,9 +130,9 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-                &none &bootloader &u_to_tap &u_to_extra &u_to_base  &none &none &none &kp LC(Y) &kp LC(V)      &kp LC(C)      &kp LC(X)    &kp LC(Z)       &none
-                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT   &none &none &none &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-                &none &none       &kp RALT  &u_to_sym   &u_to_mouse &none             &none     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+                &none &bootloader &u_to_tap &u_to_extra &u_to_base  &none &none &none &kp LC(Y) &kp LC(V)      &kp LC(C)      &kp LC(X)       &kp LC(Z)      &none
+                &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT   &none &none &none &none     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &none
+                &none &sk LSHFT   &kp RALT  &u_to_sym   &u_to_mouse &none             &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &none
                                             &none       &none       &none             &mkp MB2  &mkp MB1       &mkp MB3
             >;
         };
@@ -131,7 +142,7 @@
             bindings = <
                 &none &bootloader &u_to_tap &u_to_extra &u_to_base  &none &none &none &rgb_ug RGB_TOG   &rgb_ug RGB_EFF &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none
                 &none &kp LGUI    &kp LALT  &kp LCTRL   &kp LSHFT   &none &none &none &ext_power EP_TOG &kp C_PREV      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_NEXT      &none
-                &none &none       &kp RALT  &u_to_fun   &u_to_media &none             &u_out_tog        &u_bt_sel_0     &u_bt_sel_1     &u_bt_sel_2     &u_bt_sel_3     &none
+                &none &sk LSHFT   &kp RALT  &u_to_fun   &u_to_media &none             &u_out_tog        &u_bt_sel_0     &u_bt_sel_1     &u_bt_sel_2     &u_bt_sel_3     &none
                                             &none       &none       &none             &kp C_STOP        &kp C_PP        &kp C_MUTE
             >;
         };
@@ -139,20 +150,20 @@
         num_layer {
             display-name = "Num";
             bindings = <
-                &kp RA(N2) &nm_lbkt  &kp N7 &kp N8  &kp N9 &nm_rbkt  &kp LS(SQT) &none &pt_caret &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &kp EQUAL  &kp NUBS  &nm_4  &kp N5  &kp N6 &kp LBKT  &kp SQT     &none &pt_grave &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
-                &kp MINUS  &kp COMMA &kp N1 &kp N2  &kp N3 &kp GRAVE                   &pt_tilde &u_to_num  &u_to_nav   &kp RALT  &none       &none
-                                            &kp DOT &kp N0 &kp SLASH                   &none     &none      &none
+                &none &kp SQT   &nm_7 &nm_8   &nm_9  &nm_slash &none &none &none        &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &none &kp DOT   &nm_4 &nm_5   &nm_6  &nm_star  &none &none &kp LS(NUBS) &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &none &kp COMMA &nm_1 &nm_2   &nm_3  &kp LBKT              &kp NUBS     &u_to_num  &u_to_nav   &kp RALT  &none       &none
+                                      &kp DOT &kp N0 &kp SLASH             &none        &none      &none
             >;
         };
 
         sym_layer {
             display-name = "Sym";
             bindings = <
-                &kp RA(N2)    &kp RA(N7)    &kp LS(N7) &kp LS(N8)  &kp LS(N9) &kp RA(N0)    &kp LS(N4) &pt_trema &pt_caret &u_to_base &u_to_extra &u_to_tap &bootloader &none
-                &kp LS(EQUAL) &kp LS(NUBS)  &kp RA(N5) &kp LS(N5)  &kp LS(N6) &kp LS(LBKT)  &none      &pt_acute &pt_grave &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
-                &kp LS(MINUS) &kp LS(COMMA) &kp LS(N1) &kp LS(N2)  &kp LS(N3) &kp LS(GRAVE)                      &pt_tilde &u_to_sym  &u_to_mouse &kp RALT  &none       &none
-                                                       &kp LS(DOT) &kp LS(N0) &kp LS(SLASH)                      &none     &none      &none
+                &none &nm_s_excl &nm_s_quot &kp LS(N3)  &nm_s_eur  &kp GRAVE     &none &none &none         &u_to_base &u_to_extra &u_to_tap &bootloader &none
+                &none &kp RA(N2) &kp LS(N5) &kp LS(N8)  &kp LS(N9) &kp LS(N6)    &none &none &kp LS(EQUAL) &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI    &none
+                &none &kp NUBS   &kp RA(N7) &kp RA(N8)  &kp RA(N9) &kp RA(N0)                &kp EQUAL     &u_to_sym  &u_to_mouse &kp RALT  &none       &none
+                                            &kp LS(DOT) &kp LS(N0) &kp LS(SLASH)             &none         &none      &none
             >;
         };
 
@@ -467,23 +478,89 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        /* Num layer keys: Shift gives Miryoku's shifted symbol (US legends) */
-        nm_lbkt: nm_lbkt {
+        /* Num / Sym keys: Shift gives the small character of the layout image */
+        nm_7: nm_7 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RA(N8)>, <&kp RA(N7)>;
+            bindings = <&kp N7>, <&pt_caret>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        nm_rbkt: nm_rbkt {
+        nm_8: nm_8 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RA(N9)>, <&kp RA(N0)>;
+            bindings = <&kp N8>, <&pt_tilde>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_9: nm_9 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N9>, <&pt_acute>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_slash: nm_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&pt_grave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_star: nm_star {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT)>, <&pt_trema>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         nm_4: nm_4 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N4>, <&kp RA(N5)>;
+            bindings = <&kp N4>, <&kp LS(N5)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_5: nm_5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N5>, <&kp LS(N8)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_6: nm_6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N6>, <&kp LS(N9)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_1: nm_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp RA(N5)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_2: nm_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&alt_sup2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_3: nm_3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&alt_sup3>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_s_excl: nm_s_excl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N1)>, <&kp LS(MINUS)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_s_quot: nm_s_quot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N2)>, <&kp MINUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nm_s_eur: nm_s_eur {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RA(N5)>, <&kp LS(N4)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -550,6 +627,58 @@
             wait-ms = <10>;
             tap-ms = <20>;
             bindings = <&macro_tap &kp NUHS &kp SPACE>;
+        };
+
+        /* Windows Alt codes: hold Alt, type the decimal code on the numeric
+           keypad.  Windows only (Num Lock on); other systems ignore or misread them */
+        alt_sup2: alt_sup2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N8 &macro_release &kp LALT>;
+        };
+        alt_sup3: alt_sup3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N9 &macro_release &kp LALT>;
+        };
+        alt_half: alt_half {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N8 &kp KP_N9 &macro_release &kp LALT>;
+        };
+        alt_quarter: alt_quarter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N8 &kp KP_N8 &macro_release &kp LALT>;
+        };
+        alt_3quarters: alt_3quarters {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LALT &macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N0 &macro_release &kp LALT>;
+        };
+        frac_13: frac_13 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp N1 &kp LS(N7) &kp N3>;
+        };
+        frac_23: frac_23 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <20>;
+            bindings = <&macro_tap &kp N2 &kp LS(N7) &kp N3>;
         };
 
         /* dead key, then the vowel (_l = lower case, _u = upper case) */
@@ -815,6 +944,38 @@
             key-positions = <31 32>;
             bindings = <&kp SEMI>;
             layers = <0>;
+        };
+
+        /* Num layer: two digits together = fraction (numerator + denominator) */
+        combo_half: combo_half {
+            timeout-ms = <35>;
+            key-positions = <30 31>;
+            bindings = <&alt_half>;
+            layers = <7>;
+        };
+        combo_third: combo_third {
+            timeout-ms = <35>;
+            key-positions = <30 32>;
+            bindings = <&frac_13>;
+            layers = <7>;
+        };
+        combo_two_thirds: combo_two_thirds {
+            timeout-ms = <35>;
+            key-positions = <31 32>;
+            bindings = <&frac_23>;
+            layers = <7>;
+        };
+        combo_quarter: combo_quarter {
+            timeout-ms = <35>;
+            key-positions = <30 16>;
+            bindings = <&alt_quarter>;
+            layers = <7>;
+        };
+        combo_3_quarters: combo_3_quarters {
+            timeout-ms = <35>;
+            key-positions = <32 16>;
+            bindings = <&alt_3quarters>;
+            layers = <7>;
         };
     };
 };
